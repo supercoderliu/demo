@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: myRoute
+          uri: http://httpbin.org:80
+          predicates:
+            - Path=/*
+#      globalcors:
+#        '[/**]':
+#          allowedOrigins: "*"
+#          allowedMethods: "*"
+#        add-to-simple-url-handler-mapping: true
